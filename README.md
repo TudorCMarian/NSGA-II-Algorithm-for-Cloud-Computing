@@ -4,7 +4,6 @@
 
 We use NSGA-II to minimize costs and maximize task execution speed in a distributed network, generating efficient solutions for CPU, RAM, and storage allocation.
 
-### Understanding the Problem and Objectives 
 #### **Understanding the Problem and Objectives**
 
 -   **Conflicting Objectives**:
