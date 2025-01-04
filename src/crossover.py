@@ -2,7 +2,7 @@
 #                                                                        #
 #  Copyright:   (c) 2024, Tudor Marian                                   #
 #  E-mail:      tudor-constantin.marian@student.tuiasi.ro                # 
-#  Name:        mutate.py                                                #
+#  Name:        crossover.py                                             #
 #                                                                        #
 #  This code and information are provided "as is" without warranty of    #
 #  any kind, either expressed or implied, including but not limited      #
@@ -11,9 +11,26 @@
 #  applications as long as the original copyright notice is included.    #
 #                                                                        #
 ##########################################################################
+
+import mutate
 import random
 
-def mutate(solution, bounds):
+def crossover(parents, crossover_prob, mutation_prob, bounds):
 
-    idx = random.randint(0, len(solution) - 1)
-    solution[idx] = random.uniform(bounds[idx][0], bounds[idx][1])
+    children = []
+    for _ in range(len(parents) // 2):
+        if random.random() < crossover_prob:
+            p1, p2 = random.sample(parents, 2)
+            child1 = [(x + y) / 2 for x, y in zip(p1, p2)]
+            child2 = [(x - y) / 2 for x, y in zip(p1, p2)]
+        else:
+            child1, child2 = random.sample(parents, 2)
+
+        if random.random() < mutation_prob:
+            mutate(child1, bounds)
+        if random.random() < mutation_prob:
+            mutate(child2, bounds)
+
+        children.extend([child1, child2])
+
+    return children
