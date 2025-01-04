@@ -2,7 +2,7 @@
 #                                                                        #
 #  Copyright:   (c) 2024, Tudor Marian                                   #
 #  E-mail:      tudor-constantin.marian@student.tuiasi.ro                # 
-#  Name:        select_parents.py                                        #
+#  Name:        mutate.py                                                #
 #                                                                        #
 #  This code and information are provided "as is" without warranty of    #
 #  any kind, either expressed or implied, including but not limited      #
@@ -12,15 +12,8 @@
 #                                                                        #
 ##########################################################################
 
-def select_parents(population, fronts, distances, population_size):
 
-    parents = []
-    for front in fronts:
-        if len(parents) + len(front) > population_size:
-            sorted_front = sorted(front, key=lambda x: distances[x], reverse=True)
-            parents.extend(sorted_front[: population_size - len(parents)])
-            break
-        else:
-            parents.extend(front)
+def mutate(solution, bounds):
 
-    return [population[i] for i in parents]
+    idx = random.randint(0, len(solution) - 1)
+    solution[idx] = random.uniform(bounds[idx][0], bounds[idx][1])
