@@ -12,7 +12,7 @@
 #                                                                        #
 ##########################################################################
 
-import mutate
+from mutate import mutate
 import random
 
 def crossover(parents, crossover_prob, mutation_prob, bounds):
