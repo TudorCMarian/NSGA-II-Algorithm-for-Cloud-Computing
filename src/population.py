@@ -1,10 +1,8 @@
 ##########################################################################
 #                                                                        #
 #  Copyright:   (c) 2024, Plosnita Eduard                                #
-#  E-mail:      tudor-constantin.marian@student.tuiasi.ro                # 
-#               eduard.plosnita@student.tuiasi.ro                        #
-#               paul-bogdan.aflorei@student.tuiasi.ro                    #
-#  Description: Resource Optimization in Cloud Computing Using NSGA-II   #
+#  E-mail:      eduard.plosnita@student.tuiasi.ro                        #
+#  Name:        population.py                                            #
 #                                                                        #
 #  This code and information are provided "as is" without warranty of    #
 #  any kind, either expressed or implied, including but not limited      #
