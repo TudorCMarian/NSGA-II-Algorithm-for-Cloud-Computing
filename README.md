@@ -32,10 +32,8 @@ We use NSGA-II to minimize costs and maximize task execution speed in a distribu
 -   **Iteration**: Repeat the steps until the stopping criterion (e.g., number of generations) is met.
 
 #### 4. **Implementation**
-**![Pseudo1](https://github.com/user-attachments/assets/dd68b80b-e7e9-4404-acea-73dcf887e041)
-**
-**![Pseudo2](https://github.com/user-attachments/assets/7276c501-ca01-4e78-95ed-96ee346aca7d)
-**
+![Pseudo1](https://github.com/user-attachments/assets/dd68b80b-e7e9-4404-acea-73dcf887e041)
+![Pseudo2](https://github.com/user-attachments/assets/7276c501-ca01-4e78-95ed-96ee346aca7d)
 -   **Structure**:
     -   **Data Input**: Tasks and available resources.
     -   **Initialization**: Generate solutions and initialize the population.
