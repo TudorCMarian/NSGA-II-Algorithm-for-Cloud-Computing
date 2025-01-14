@@ -16,7 +16,6 @@
 import objectives
 from population import initialize_population, evaluate_population
 from crossover import crossover
-import mutate
 import select_parents
 from fast_nondominated_sort import fast_nondominated_sort
 from crowding_distance_assignment import crowding_distance_assignment
@@ -34,39 +33,6 @@ def plot_pareto_front(objectives):
     plt.title("Pareto Front")
     plt.legend()
     plt.show()
-
-# if __name__ == "__main__":
-#     #ProblemSize => Curs
-#     bounds = [(1,10), (1,10), (1,10)]
-
-#     parents = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [2, 3, 4]]
-#     population_size = 50
-#     generations = 100
-#     crossover_prob = 0.9
-#     mutation_prob = 0.1
-
-#     population = initialize_population(population_size, bounds)
-
-#     for generation in range(generations):
-#         #EvaluateAgainstsObjectivesFunctions
-#         objectives = evaluate_population(population)
-#         #FastNondominatedSort
-#         fronts = fast_nondominated_sort.fast_nondominated_sort(objectives)
-#         #SelectParentByRank
-#         parents = select_parents.select_parents(population, fronts, objectives, population_size)
-#         #CrossoverAndMutation
-#         offspring = crossover(parents, crossover_prob, mutation_prob, bounds)
-#         #Merge(Population, Children)
-#         population = parents + offspring
-    
-#     #EvaluateAgainstCondition
-#     objectives = evaluate_population(population)
-
-#     fronts = fast_nondominated_sort.fast_nondominated_sort(objectives)
-
-#     pareto_front = [objectives[i] for i in fronts[0]]
-#     plot_pareto_front(pareto_front)
-
 
 if __name__ == "__main__":
     # Input parameters
@@ -98,7 +64,7 @@ if __name__ == "__main__":
         parents = select_parents(population, fronts, distances, population_size)
 
         # Generate offspring through crossover and mutation
-        offspring = crossover_and_mutation(parents, crossover_prob, mutation_prob, bounds)
+        offspring = crossover(parents, crossover_prob, mutation_prob, bounds)
 
         # Evaluate objectives for offspring
         offspring_objectives = evaluate_population(offspring)
