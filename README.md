@@ -33,10 +33,10 @@ We use NSGA-II to minimize costs and maximize task execution speed in a distribu
 
 #### 4. **Implementation**
 
--   **Useful Libraries**:
-    -   Python: `DEAP`, `pymoo`, or manual NSGA-II implementation.
-    -   Java: Libraries like `jMetal`.
-    -   C#: Custom implementation or use existing templates.
+-   **Algorithm steps**:
+![Pseudo1](https://github.com/user-attachments/assets/597b0fb6-0215-4d0f-8253-f86d28499cd3)
+![Pseudo2](https://github.com/user-attachments/assets/fbbc166b-e124-4036-ae8a-2cdb981beaf4)
+
 -   **Structure**:
     -   **Data Input**: Tasks and available resources.
     -   **Initialization**: Generate solutions and initialize the population.
@@ -47,3 +47,7 @@ We use NSGA-II to minimize costs and maximize task execution speed in a distribu
 
 -   Test the algorithm on different datasets, simulating real-world scenarios (variations in the number of tasks and resources).
 -   Analyze the obtained solutions and evaluate the trade-offs between objectives.
+
+#### 6. **Results**
+![image](https://github.com/user-attachments/assets/72ab87a9-6401-4781-9eb1-e0e6cc55f55a)
+![image](https://github.com/user-attachments/assets/ef7145ae-5661-444a-b9ff-cca8f6a249d6)
