@@ -14,6 +14,10 @@
 import random
 
 def mutate(solution, bounds):
-
+    """Apply mutation to a solution.
+    Args:
+        solution (list): Solution to mutate.
+        bounds (list of tuples): [(min, max) for each dimension].
+    """
     idx = random.randint(0, len(solution) - 1)
     solution[idx] = random.uniform(bounds[idx][0], bounds[idx][1])

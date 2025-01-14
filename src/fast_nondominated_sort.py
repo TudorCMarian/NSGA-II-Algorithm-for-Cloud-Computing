@@ -12,8 +12,14 @@
 #                                                                        #
 ##########################################################################
 
+# Step 4: Fast Nondominated Sort
 def fast_nondominated_sort(objectives):
-
+    """Perform fast nondominated sorting.
+    Args:
+        objectives (list): List of (cost, time) tuples.
+    Returns:
+        list: A list of fronts, where each front is a list of indices.
+    """
     S = [[] for _ in range(len(objectives))]
     front = [[]]
     n = [0] * len(objectives)
@@ -45,5 +51,11 @@ def fast_nondominated_sort(objectives):
     return front
 
 def dominates(p, q):
-    
+    """Check if solution p dominates solution q.
+    Args:
+        p (tuple): Objectives of solution p.
+        q (tuple): Objectives of solution q.
+    Returns:
+        bool: True if p dominates q, False otherwise.
+    """
     return all(x <= y for x, y in zip(p, q)) and any(x < y for x, y in zip(p, q))
