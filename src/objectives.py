@@ -12,9 +12,20 @@
 #                                                                        #
 ##########################################################################
 
+# Step 1: Define the problem (objectives)
 def evaluate_solution(solution):
-    
+    """Evaluate objectives for a given solution.
+    Args:
+        solution (list): [CPU allocation, RAM allocation, Storage allocation]
+    Returns:
+        tuple: (cost, time) - values of the objectives
+    """
     cpu, ram, storage = solution
+    
+    # Objective 1: Minimize cost (example: weighted sum of resources)
     cost = 0.5 * cpu + 0.3 * ram + 0.2 * storage
-    time = 1 / (0.4 * cpu + 0.4 * ram + 0.2 * storage + 1e-6)
+
+    # Objective 2: Minimize time (example: inversely proportional to allocated resources)
+    time = 1 / (0.4 * cpu + 0.4 * ram + 0.2 * storage + 1e-6)  # Avoid division by zero
+
     return cost, time

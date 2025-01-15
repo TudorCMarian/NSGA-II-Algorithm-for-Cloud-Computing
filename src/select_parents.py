@@ -12,8 +12,17 @@
 #                                                                        #
 ##########################################################################
 
+# Step 6: Selection, Crossover, and Mutation
 def select_parents(population, fronts, distances, population_size):
-
+    """Select parents based on rank and crowding distance.
+    Args:
+        population (list): Current population.
+        fronts (list): List of fronts.
+        distances (list): List of crowding distances.
+        population_size (int): Desired size of the population.
+    Returns:
+        list: Selected parents.
+    """
     parents = []
     for front in fronts:
         if len(parents) + len(front) > population_size:

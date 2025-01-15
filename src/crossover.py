@@ -16,7 +16,15 @@ import mutate
 import random
 
 def crossover(parents, crossover_prob, mutation_prob, bounds):
-
+    """Perform crossover and mutation to generate children.
+    Args:
+        parents (list): Selected parents.
+        crossover_prob (float): Probability of crossover.
+        mutation_prob (float): Probability of mutation.
+        bounds (list of tuples): [(min, max) for each dimension].
+    Returns:
+        list: Children population.
+    """
     children = []
     for _ in range(len(parents) // 2):
         if random.random() < crossover_prob:

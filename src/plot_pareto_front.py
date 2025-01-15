@@ -15,7 +15,10 @@
 import matplotlib.pyplot as plot
 
 def plot_pareto_front(objectives):
-
+    """Plot the Pareto front.
+    Args:
+        objectives (list): List of (cost, time) tuples.
+    """
     costs, times = zip(*objectives)
     plot.scatter(costs, times, color="blue", label="Solutions")
     plot.xlabel("Cost")

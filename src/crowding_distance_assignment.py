@@ -12,15 +12,22 @@
 #                                                                        #
 ##########################################################################
 
-
+# Step 5: Crowding Distance Assignment
 def crowding_distance_assignment(front, objectives):
+    """Assign crowding distance to each solution in a front.
+    Args:
+        front (list): List of indices in the front.
+        objectives (list): List of (cost, time) tuples.
+    Returns:
+        list: Crowding distances for each solution in the front.
+    """
     distance = [0] * len(front)
     num_objectives = len(objectives[0])
 
     for m in range(num_objectives):
         sorted_front = sorted(front, key=lambda x: objectives[x][m])
         if len(sorted_front) == 0:
-            return [0] * len(front)
+            return [0] * len(front)  
         elif len(sorted_front) == 1:
             distance[sorted_front[0]] = float('inf')
 
